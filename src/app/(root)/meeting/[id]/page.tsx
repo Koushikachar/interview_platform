@@ -12,7 +12,7 @@ import { useState } from "react";
 const MeetingPage = () => {
   const { id } = useParams();
   const { isLoaded } = useUser();
-  const { call, isCallLoading } = useGetCallById(id);
+  const { call, isCallLoading } = useGetCallById(id as string);
 
   const [isSetUpComplete, setIsSetUpComplete] = useState(false);
   if (!isLoaded || isCallLoading) return <LoaderUI />;
